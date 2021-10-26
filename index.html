@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adori Youtube Button</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 45px;
+      }
+      .btn {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(235, 235, 235);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        color: black;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: '';
+        text-decoration: none;
+      }
+      .btn:hover {
+        background-color: rgb(225, 225, 225);
+      }
+      .img {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="btn" target="_blank">
+      <img src="https://miro.medium.com/max/3150/1*XhR1N58BzE96CQR72t6dvw.png" class="img" width="25" height="25" />
+      Create and Upload Video to Youtube
+    </a>
+    <script>
+      let urlString = window.location.search
+      const urlParams = new URLSearchParams(urlString)
+      const btn = document.getElementsByTagName('a')[0]
+      btn.setAttribute(
+        'href',
+        `https://studio.dev.adorilabs.com/onboarding?feedUrl=${urlParams.get('feedUrl')}&adoriKey=${urlParams.get(
+          'adoriKey'
+        )}`
+      )
+    </script>
+  </body>
+</html>
